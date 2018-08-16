@@ -1,0 +1,15 @@
+name: piet_interpreter
+version: 0.1.0
+
+authors:
+  - Andy Nicholson <andrew@anicholson.net>
+
+crystal: 0.26.0
+
+dependencies:
+  stumpy_png:
+    github: stumpycr/stumpy_png
+    version: "~>4.4"
+
+    
+license: MIT
