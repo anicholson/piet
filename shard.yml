@@ -10,6 +10,8 @@ dependencies:
   stumpy_png:
     github: stumpycr/stumpy_png
     version: "~>4.4"
-
+  delegate:
+    github: anicholson/delegate
+    version: "< 1"
     
 license: MIT

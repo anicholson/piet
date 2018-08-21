@@ -1,7 +1,10 @@
 require "stumpy_png"
+require "delegate"
 
 module PietInterpreter
   class Reader
+    include Delegate
+
     def initialize(@canvas : StumpyCore::Canvas)
     end
 
@@ -9,13 +12,7 @@ module PietInterpreter
       new StumpyPNG.read(file_name)
     end
 
-    def width
-      canvas.width
-    end
-
-    def height
-      canvas.height
-    end
+    delegate to: canvas, methods: [height, width, :[]]
 
     private getter canvas
   end
