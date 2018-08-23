@@ -12,7 +12,7 @@ module PietInterpreter
       new StumpyPNG.read(file_name)
     end
 
-    delegate to: canvas, methods: [height, width, :[]]
+    delegate to: canvas, methods: [height, width, get]
 
     private getter canvas
   end

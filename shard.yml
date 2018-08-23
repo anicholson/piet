@@ -12,6 +12,6 @@ dependencies:
     version: "~>4.4"
   delegate:
     github: anicholson/delegate
-    version: "< 1"
+    version: "~> 0.2"
     
 license: MIT
