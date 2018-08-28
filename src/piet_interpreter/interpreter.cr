@@ -1,10 +1,7 @@
-require "crystalline/containers/stack"
-
 module PietInterpreter
   class Interpreter
     def initialize
-      @stack = Stack(UInt64).new
-      @dp = Direction::Right
+      @context = Context.new
     end
   end
 end

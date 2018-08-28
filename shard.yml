@@ -13,5 +13,8 @@ dependencies:
   delegate:
     github: anicholson/delegate
     version: "~> 0.2"
+  crystalline:
+    github: jtomschroeder/crystalline
+    branch: "0e9219b02836b6d6f8b6f01e28f60974e0241deb"
     
 license: MIT

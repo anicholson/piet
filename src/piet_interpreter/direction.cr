@@ -5,4 +5,9 @@ module PietInterpreter
     Left
     Up
   end
+
+  enum CodelChooserDirection
+    Left
+    Right
+  end
 end
