@@ -1,3 +1,5 @@
+require "delegate"
+
 module PietInterpreter
   struct Point2D
     getter x : UInt16
@@ -30,14 +32,14 @@ module PietInterpreter
   end
 
   struct CodeBlock
+    include Delegate
     getter colour : Colour
-    getter size : UInt64
 
-    def initialize(@colour, @size)
-      raise ArgumentError.new("codel size must be greater than 0") unless size > 0
-
-      @size = size
+    def initialize(@colour, @codels : Set(Point2D))
+      raise ArgumentError.new("codel size must be greater than 0") if @codels.empty?
     end
+
+    delegate to: @codels, methods: [size]
 
     def self.from_location(x, y, reader)
       point = Point2D.new(x.to_u16, y.to_u16)
@@ -73,8 +75,7 @@ module PietInterpreter
         this_point.neighbours.each { |p| checking_queue.unshift(p) }
       end
 
-      codels = checked_codels.size.to_u64
-      new(colour: colour, size: codels)
+      new(colour: colour, codels: checked_codels)
     end
   end
 end
