@@ -37,8 +37,22 @@ module PietInterpreter
       abstract def size : UInt64
     end
 
+    class NullCodeBlock
+      include CodeBlock::T
+
+      def colour
+        Grey::Black
+      end
+
+      def size
+        1_u64
+      end
+    end
+
     include T
     include Delegate
+
+    NULL = NullCodeBlock.new
 
     getter colour : Colour
 

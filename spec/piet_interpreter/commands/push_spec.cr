@@ -1,7 +1,7 @@
 require "../../spec_helper"
 
 module PietInterpreter
-  class MockCodeBlock
+  class PushSpecMockCodeBlock
     include CodeBlock::T
 
     def colour
@@ -15,7 +15,7 @@ module PietInterpreter
 
   describe Commands::Push do
     it "puts the value of the current block onto the stack" do
-      code_block = MockCodeBlock.new
+      code_block = PushSpecMockCodeBlock.new
 
       context = Context.new(current_code_block: code_block)
 
