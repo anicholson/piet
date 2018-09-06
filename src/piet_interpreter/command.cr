@@ -1,5 +1,9 @@
 module PietInterpreter
-  abstract class Command
-    abstract def run(context : Context) : Context
+  module Commands
+    abstract class Command
+      abstract def run(context) : Context
+    end
   end
 end
+
+require "./commands/*"

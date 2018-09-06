@@ -31,8 +31,15 @@ module PietInterpreter
     end
   end
 
-  struct CodeBlock
+  class CodeBlock
+    module T
+      abstract def colour : Colour
+      abstract def size : UInt64
+    end
+
+    include T
     include Delegate
+
     getter colour : Colour
 
     def initialize(@colour, @codels : Set(Point2D))
