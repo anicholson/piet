@@ -12,6 +12,14 @@ module PietInterpreter
         new_context.stack.size.should eq 1
         new_context.stack.first.should eq 2
       end
+
+      it "ignores if the stack is empty" do
+        context = Context.new
+
+        new_context = Pop.new.run(context)
+
+        new_context.should eq context
+      end
     end
   end
 end
