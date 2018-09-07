@@ -7,7 +7,7 @@ module PietInterpreter
         context = Context.new
         context.stack = Stack.new([2_i64, 3_i64, 5_i64])
 
-        new_context  = Multiply.new.run(context)
+        new_context = Multiply.new.run(context)
 
         new_context.stack.size.should eq 2
         new_context.stack.first.should eq 15
