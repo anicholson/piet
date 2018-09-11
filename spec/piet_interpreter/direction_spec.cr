@@ -23,4 +23,18 @@ module PietInterpreter
       end
     end
   end
+
+  describe CodelChooserDirection do
+    describe "#toggle" do
+      it "odd numbers flip" do
+        CodelChooserDirection::Left.toggle(3).should eq CodelChooserDirection::Right
+        CodelChooserDirection::Right.toggle(-5).should eq CodelChooserDirection::Left
+      end
+
+      it "even numbers don't change" do
+        CodelChooserDirection::Left.toggle(2).should eq CodelChooserDirection::Left
+        CodelChooserDirection::Right.toggle(-12).should eq CodelChooserDirection::Right
+      end
+    end
+  end
 end
