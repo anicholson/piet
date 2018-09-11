@@ -2,7 +2,7 @@ module PietInterpreter
   struct Context
     property stack
     property dp : Direction
-    getter cc : CodelChooserDirection
+    property cc : CodelChooserDirection
     property current_code_block : CodeBlock::T
 
     def initialize(@stack = Stack.new, @dp = Direction::Right, @cc = CodelChooserDirection::Left, @current_code_block = CodeBlock::NULL)
