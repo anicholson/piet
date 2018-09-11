@@ -16,6 +16,10 @@ module PietInterpreter
       it "CC points to the left" do
         subject.cc.should eq CodelChooserDirection::Left
       end
+
+      it "has an empty STDIN" do
+        subject.stdin.empty?.should eq true
+      end
     end
   end
 end
