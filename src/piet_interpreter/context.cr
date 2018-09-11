@@ -1,7 +1,7 @@
 module PietInterpreter
   struct Context
     property stack
-    getter dp : Direction
+    property dp : Direction
     getter cc : CodelChooserDirection
     property current_code_block : CodeBlock::T
 
