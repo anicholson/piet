@@ -4,7 +4,7 @@ module PietInterpreter
     property dp : Direction
     property cc : CodelChooserDirection
     property current_code_block : CodeBlock::T
-    getter stdin : Deque(Char)
+    property stdin : Deque(Char)
 
     def initialize(@stack = Stack.new, @dp = Direction::Right, @cc = CodelChooserDirection::Left, @current_code_block = CodeBlock::NULL)
       @stdin = Deque(Char).new
