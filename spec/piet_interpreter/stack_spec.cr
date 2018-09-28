@@ -19,12 +19,24 @@ module PietInterpreter
         old.should eq new
       end
 
-      it "pushes the top value down to (depth)th place" do
-        old = Stack.new [1_i64, 1_i64, 1_i64, 1_i64, 9_i64]
+      describe "n is positive" do
+        it "pushes the top value down to (depth)th place" do
+          old = Stack.new [1_i64, 1_i64, 1_i64, 1_i64, 9_i64]
 
-        new = old.roll(2)
+          new = old.roll(2)
 
-        new.should eq Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
+          new.should eq Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
+        end
+      end
+
+      describe "n is negative" do
+        it "pushes from the bottom instead" do
+          old = Stack.new [9_i64, 1_i64, 1_i64, 1_i64, 1_i64]
+
+          new = old.roll(2, top_down: false)
+
+          new.should eq Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
+        end
       end
     end
   end
