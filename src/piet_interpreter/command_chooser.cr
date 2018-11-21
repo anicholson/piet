@@ -1,15 +1,12 @@
 module PietInterpreter
   struct CommandChooser
-    # nodoc
-    alias C = ::PietInterpreter::Commands
-
     MAPPING = [
-      [C::Noop, C::Push, C::Pop],
-      [C::Add, C::Subtract, C::Multiply],
-      [C::Divide, C::Mod, C::Not],
-      [C::Greater, C::Pointer, C::Switch],
-      [C::Dup, C::Roll, C::InDigit],
-      [C::InChar, C::OutDigit, C::OutChar],
+      [Commands::Noop, Commands::Push, Commands::Pop],
+      [Commands::Add, Commands::Subtract, Commands::Multiply],
+      [Commands::Divide, Commands::Mod, Commands::Not],
+      [Commands::Greater, Commands::Pointer, Commands::Switch],
+      [Commands::Dup, Commands::Roll, Commands::InDigit],
+      [Commands::InChar, Commands::OutDigit, Commands::OutChar],
     ]
 
     def self.call(hue_change, light_change) : Commands::Command
