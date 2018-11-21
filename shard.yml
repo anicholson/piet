@@ -16,5 +16,11 @@ dependencies:
   crystalline:
     github: jtomschroeder/crystalline
     branch: "0e9219b02836b6d6f8b6f01e28f60974e0241deb"
+
+development_dependencies:
+  minitest:
+    github: ysbaddaden/minitest.cr
+    branch: master
+
     
 license: MIT
