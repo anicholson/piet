@@ -9,7 +9,7 @@ module PietInterpreter
 
           new_context = InDigit.new.run(context)
 
-          new_context.should eq context
+          new_context.must_equal context
         end
       end
 
@@ -21,8 +21,8 @@ module PietInterpreter
 
           new_context = InDigit.new.run(context)
 
-          new_context.stdin.empty?.should eq true
-          new_context.stack.first.should eq 8
+          new_context.stdin.empty?.must_equal true
+          new_context.stack.first.must_equal 8
         end
 
         it "non-digits are an error" do
@@ -32,8 +32,8 @@ module PietInterpreter
 
           new_context = InDigit.new.run(context)
 
-          new_context.stdin.empty?.should eq true
-          new_context.stack.empty?.should eq true
+          new_context.stdin.empty?.must_equal true
+          new_context.stack.empty?.must_equal true
         end
       end
     end

@@ -9,8 +9,8 @@ module PietInterpreter
 
         new_context = Multiply.new.run(context)
 
-        new_context.stack.size.should eq 2
-        new_context.stack.first.should eq 15
+        new_context.stack.size.must_equal 2
+        new_context.stack.first.must_equal 15
       end
 
       it "ignores if the stack is too small" do
@@ -19,7 +19,7 @@ module PietInterpreter
 
         new_context = Multiply.new.run(context)
 
-        new_context.should eq context
+        new_context.must_equal context
       end
     end
   end

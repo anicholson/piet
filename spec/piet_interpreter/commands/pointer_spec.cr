@@ -8,14 +8,14 @@ module PietInterpreter
 
         context.stack = Stack.new([5_i64])
 
-        context.dp.should eq Direction::Right
+        context.dp.must_equal Direction::Right
 
         new_context = Pointer.new.run(context)
 
-        new_context.stack.empty?.should eq true
+        new_context.stack.empty?.must_equal true
 
-        new_context.dp.should_not eq context.dp
-        new_context.dp.should eq Direction::Down
+        new_context.dp.wont_equal context.dp
+        new_context.dp.must_equal Direction::Down
       end
 
       it "can handle counter-clockwise" do
@@ -23,12 +23,12 @@ module PietInterpreter
 
         context.stack = Stack.new([-5_i64])
 
-        context.dp.should eq Direction::Right
+        context.dp.must_equal Direction::Right
 
         new_context = Pointer.new.run(context)
 
-        new_context.stack.empty?.should eq true
-        new_context.dp.should eq Direction::Up
+        new_context.stack.empty?.must_equal true
+        new_context.dp.must_equal Direction::Up
       end
 
       it "ignores if the stack is too small" do
@@ -36,7 +36,7 @@ module PietInterpreter
 
         new_context = Pointer.new.run(context)
 
-        context.should eq new_context
+        context.must_equal new_context
       end
     end
   end

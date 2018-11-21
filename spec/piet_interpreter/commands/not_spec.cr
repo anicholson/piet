@@ -10,8 +10,8 @@ module PietInterpreter
 
           new_context = Not.new.run(context)
 
-          new_context.stack.size.should eq 1
-          new_context.stack.first.should eq 1
+          new_context.stack.size.must_equal 1
+          new_context.stack.first.must_equal 1
         end
 
         it "non-zero (positive) becomes 0" do
@@ -20,8 +20,8 @@ module PietInterpreter
 
           new_context = Not.new.run(context)
 
-          new_context.stack.size.should eq 1
-          new_context.stack.first.should eq 0
+          new_context.stack.size.must_equal 1
+          new_context.stack.first.must_equal 0
         end
 
         it "non-zero (negative) becomes 0" do
@@ -30,8 +30,8 @@ module PietInterpreter
 
           new_context = Not.new.run(context)
 
-          new_context.stack.size.should eq 1
-          new_context.stack.first.should eq 0
+          new_context.stack.size.must_equal 1
+          new_context.stack.first.must_equal 0
         end
       end
 
@@ -40,7 +40,7 @@ module PietInterpreter
 
         new_context = Not.new.run(context)
 
-        new_context.should eq context
+        new_context.must_equal context
       end
     end
   end

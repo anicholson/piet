@@ -9,13 +9,13 @@ module PietInterpreter
 
         new_context = Dup.new.run(context)
 
-        new_context.stack.size.should eq 3
+        new_context.stack.size.must_equal 3
 
         a = new_context.stack.pop
         b = new_context.stack.pop
 
-        a.should eq b
-        a.should eq 2
+        a.must_equal b
+        a.must_equal 2
       end
 
       it "ignores if the stack is too small" do
@@ -23,7 +23,7 @@ module PietInterpreter
 
         new_context = Dup.new.run(context)
 
-        new_context.should eq context
+        new_context.must_equal context
       end
     end
   end

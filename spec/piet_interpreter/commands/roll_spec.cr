@@ -9,7 +9,7 @@ module PietInterpreter
 
           new_context = Roll.new.run(context)
 
-          context.should eq new_context
+          context.must_equal new_context
         end
       end
 
@@ -18,7 +18,7 @@ module PietInterpreter
           context = Context.new(stack: Stack.new [-1_i64, 2_i64])
           new_context = Roll.new.run(context)
 
-          new_context.stack.empty?.should eq true
+          new_context.stack.empty?.must_equal true
         end
 
         it "throws the top two away" do
@@ -27,7 +27,7 @@ module PietInterpreter
 
           new_context = Roll.new.run(context)
 
-          new_context.stack.size.should eq 4
+          new_context.stack.size.must_equal 4
         end
 
         describe "when rolls = 0" do
@@ -38,7 +38,7 @@ module PietInterpreter
 
             new_context = Roll.new.run(context)
 
-            new_context.stack.should eq expected_stack
+            new_context.stack.must_equal expected_stack
           end
         end
 
@@ -51,7 +51,7 @@ module PietInterpreter
 
               new_context = Roll.new.run(context)
 
-              new_context.stack.should eq expected_stack
+              new_context.stack.must_equal expected_stack
             end
           end
 
@@ -63,7 +63,7 @@ module PietInterpreter
 
               new_context = Roll.new.run(context)
 
-              new_context.stack.should eq expected_stack
+              new_context.stack.must_equal expected_stack
             end
           end
         end
@@ -77,7 +77,7 @@ module PietInterpreter
 
               new_context = Roll.new.run(context)
 
-              new_context.stack.should eq expected_stack
+              new_context.stack.must_equal expected_stack
             end
           end
 
@@ -89,7 +89,7 @@ module PietInterpreter
 
               new_context = Roll.new.run(context)
 
-              new_context.stack.should eq expected_stack
+              new_context.stack.must_equal expected_stack
             end
           end
         end

@@ -23,8 +23,8 @@ module PietInterpreter
 
       new_context = Commands::Push.new.run(context)
 
-      new_context.stack.size.should eq(1)
-      new_context.stack.first.should eq(code_block.size)
+      new_context.stack.size.must_equal(1)
+      new_context.stack.first.must_equal(code_block.size)
     end
   end
 end

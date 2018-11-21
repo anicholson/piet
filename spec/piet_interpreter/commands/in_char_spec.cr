@@ -9,7 +9,7 @@ module PietInterpreter
 
           new_context = InChar.new.run(context)
 
-          new_context.should eq context
+          new_context.must_equal context
         end
       end
 
@@ -21,8 +21,8 @@ module PietInterpreter
 
           new_context = InChar.new.run(context)
 
-          new_context.stdin.empty?.should eq true
-          new_context.stack.first.should eq 65
+          new_context.stdin.empty?.must_equal true
+          new_context.stack.first.must_equal 65
         end
       end
     end

@@ -9,7 +9,7 @@ module PietInterpreter
 
           new_context = OutChar.new.run(context)
 
-          new_context.should eq context
+          new_context.must_equal context
         end
       end
 
@@ -21,10 +21,10 @@ module PietInterpreter
 
           new_context = OutChar.new.run(context)
 
-          new_context.stdout.empty?.should eq false
-          new_context.stack.empty?.should eq true
+          new_context.stdout.empty?.must_equal false
+          new_context.stack.empty?.must_equal true
 
-          new_context.stdout.first.should eq 'c'
+          new_context.stdout.first.must_equal 'c'
         end
 
         it "too-big numbers are an error and ignored" do
@@ -34,8 +34,8 @@ module PietInterpreter
 
           new_context = OutChar.new.run(context)
 
-          new_context.stdout.empty?.should eq true
-          new_context.stack.empty?.should eq true
+          new_context.stdout.empty?.must_equal true
+          new_context.stack.empty?.must_equal true
         end
 
         it "negative numbers are an error and are ignored" do
@@ -45,8 +45,8 @@ module PietInterpreter
 
           new_context = OutChar.new.run(context)
 
-          new_context.stdout.empty?.should eq true
-          new_context.stack.empty?.should eq true
+          new_context.stdout.empty?.must_equal true
+          new_context.stack.empty?.must_equal true
         end
       end
     end

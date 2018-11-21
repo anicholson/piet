@@ -8,12 +8,12 @@ module PietInterpreter
 
         context.stack = Stack.new([5_i64])
 
-        context.cc.should eq CodelChooserDirection::Left
+        context.cc.must_equal CodelChooserDirection::Left
 
         new_context = Switch.new.run(context)
 
-        new_context.stack.empty?.should eq true
-        new_context.cc.should eq CodelChooserDirection::Right
+        new_context.stack.empty?.must_equal true
+        new_context.cc.must_equal CodelChooserDirection::Right
       end
 
       it "can handle counter-clockwise" do
@@ -21,12 +21,12 @@ module PietInterpreter
 
         context.stack = Stack.new([-2_i64])
 
-        context.cc.should eq CodelChooserDirection::Left
+        context.cc.must_equal CodelChooserDirection::Left
 
         new_context = Switch.new.run(context)
 
-        new_context.stack.empty?.should eq true
-        new_context.cc.should eq CodelChooserDirection::Left
+        new_context.stack.empty?.must_equal true
+        new_context.cc.must_equal CodelChooserDirection::Left
       end
 
       it "ignores if the stack is too small" do
@@ -34,7 +34,7 @@ module PietInterpreter
 
         new_context = Switch.new.run(context)
 
-        context.should eq new_context
+        context.must_equal new_context
       end
     end
   end
