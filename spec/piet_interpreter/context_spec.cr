@@ -1,24 +1,23 @@
 require "../spec_helper"
 
-subject = PietInterpreter::Context.new
-
 module PietInterpreter
   describe Context do
+    let(subject) { PietInterpreter::Context.new }
     describe "default values" do
       it "has an empty stack" do
-        subject.stack.size.should eq 0
+        subject.stack.size.must_equal 0
       end
 
       it "DP points to the right" do
-        subject.dp.should eq Direction::Right
+        subject.dp.must_equal Direction::Right
       end
 
       it "CC points to the left" do
-        subject.cc.should eq CodelChooserDirection::Left
+        subject.cc.must_equal CodelChooserDirection::Left
       end
 
       it "has an empty STDIN" do
-        subject.stdin.empty?.should eq true
+        subject.stdin.empty?.must_equal true
       end
     end
   end

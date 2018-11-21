@@ -8,7 +8,7 @@ module PietInterpreter
 
         new = old.roll(0)
 
-        new.should eq old
+        new.must_equal old
       end
 
       it "roll(n) on an empty stack is a no-op" do
@@ -16,7 +16,7 @@ module PietInterpreter
 
         new = old.roll(25)
 
-        old.should eq new
+        old.must_equal new
       end
 
       describe "n is positive" do
@@ -25,7 +25,7 @@ module PietInterpreter
 
           new = old.roll(2)
 
-          new.should eq Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
+          new.must_equal Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
         end
       end
 
@@ -35,7 +35,7 @@ module PietInterpreter
 
           new = old.roll(2, top_down: false)
 
-          new.should eq Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
+          new.must_equal Stack.new([1_i64, 1_i64, 9_i64, 1_i64, 1_i64])
         end
       end
     end
